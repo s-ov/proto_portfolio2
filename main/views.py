@@ -7,10 +7,7 @@ from .models import (
 		Testimonial,
 		Certificate
 	)
-
 from django.views import generic
-
-
 from . forms import ContactForm
 
 
@@ -55,6 +52,7 @@ class PortfolioView(generic.ListView):
 class PortfolioDetailView(generic.DetailView):
 	model = Portfolio
 	template_name = "main/portfolio-detail.html"
+
 
 class BlogView(generic.ListView):
 	model = Blog

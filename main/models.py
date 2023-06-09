@@ -17,8 +17,8 @@ class Skill(models.Model):
     def __str__(self):
         return self.name
 
-class UserProfile(models.Model):
 
+class UserProfile(models.Model):
     class Meta:
         verbose_name_plural = 'User Profiles'
         verbose_name = 'User Profile'
@@ -35,13 +35,12 @@ class UserProfile(models.Model):
 
 
 class ContactProfile(models.Model):
-    
     class Meta:
         verbose_name_plural = 'Contact Profiles'
         verbose_name = 'Contact Profile'
         ordering = ["timestamp"]
     timestamp = models.DateTimeField(auto_now_add=True)
-    name = models.CharField(verbose_name="Name",max_length=100)
+    name = models.CharField(verbose_name="Name", max_length=100)
     email = models.EmailField(verbose_name="Email")
     message = models.TextField(verbose_name="Message")
 
@@ -49,9 +48,7 @@ class ContactProfile(models.Model):
         return f'{self.name}'
 
 
-
 class Testimonial(models.Model):
-
     class Meta:
         verbose_name_plural = 'Testimonials'
         verbose_name = 'Testimonial'
@@ -68,12 +65,10 @@ class Testimonial(models.Model):
 
 
 class Media(models.Model):
-
     class Meta:
         verbose_name_plural = 'Media Files'
         verbose_name = 'Media'
         ordering = ["name"]
-	
     image = models.ImageField(blank=True, null=True, upload_to="media")
     url = models.URLField(blank=True, null=True)
     name = models.CharField(max_length=200, blank=True, null=True)
@@ -83,11 +78,12 @@ class Media(models.Model):
         if self.url:
             self.is_image = False
         super(Media, self).save(*args, **kwargs)
+
     def __str__(self):
         return self.name
 
-class Portfolio(models.Model):
 
+class Portfolio(models.Model):
     class Meta:
         verbose_name_plural = 'Portfolio Profiles'
         verbose_name = 'Portfolio'
@@ -118,7 +114,6 @@ class Blog(models.Model):
         verbose_name_plural = 'Blog Profiles'
         verbose_name = 'Blog'
         ordering = ["timestamp"]
-
     timestamp = models.DateTimeField(auto_now_add=True)
     author = models.CharField(max_length=200, blank=True, null=True)
     name = models.CharField(max_length=200, blank=True, null=True)

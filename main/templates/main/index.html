@@ -1,35 +1,21 @@
 {% extends 'main/base.html' %}
 {% load static %}
 
-<!-- ================================
-Start SEO blocks
-================================= -->
+<!-- Start SEO blocks -->
 {% block title %}{% endblock %}
 {% block decription %}{% endblock %}
 {% block keywords %}{% endblock %}
-<!-- ================================
-END SEO blocks
-================================= -->
+<!-- END SEO blocks -->
 
-<!-- ================================
-Start CSS blocks
-================================= -->
+<!-- Start CSS blocks -->
 {% block extend_header %}{% endblock %}
-<!-- ================================
-END CSS blocks
-================================= -->
 
-<!-- ================================
-Start script blocks
-================================= -->
+
+<!-- Start script blocks -->
 {% block extend_footer %}{% endblock %}
-<!-- ================================
-END script blocks
-================================= -->
+<!-- END script blocks -->
 
-<!-- ================================
-Start Content
-================================= -->
+<!-- Start Content -->
 {% block content %}
 <section>
   <div class="bannerSection">
@@ -42,7 +28,7 @@ Start Content
         </div>
         <div class="col-md">
           <div class="bannerContent">
-            <h1 class="xlTitle pb-3">Hi, I’m {{me.first_name|title}}, <br> a {{me.userprofile.title}} </br></h1>
+            <h1 class="lgTitle pb-3">Hi! I’m {{me.first_name|title}} {{me.last_name|title}}, <br> {{me.userprofile.title}}</br></h1>
             <p>{{me.userprofile.bio}}</p>
             <div class="bannerBtnCol">
               <div class="row">
@@ -62,7 +48,7 @@ Start Content
 </section>
 
 <section>
-  <div class="sectionSpace pt-0">
+  <div class="sectionSpaceSm pt-0">
     <div class="container">
       <div class="row">
         <div class="col-md-auto">
